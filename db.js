@@ -17,25 +17,17 @@ mongoose.connect(mongodbURL, mongodbOptions, function (err, res) {
 
 // User Schema
 var UserSchema = new Schema({
-
-    userName: {
+    email: {
         type:String
     },
     mobileNumber:{
         type:String
     },
-    isDeleted:{
-        type:Boolean,
-        default:false,
-        required:true
-    },
-
     createdDate:{
         type:Date,
         default:Date.now,
         required:true
     }
-
 })
 
 exports.User = mongoose.model('User', UserSchema, 'users');
